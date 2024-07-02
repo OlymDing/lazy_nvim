@@ -16,7 +16,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "newpaper",
+      colorscheme = "everforest",
     },
   },
 
@@ -86,7 +86,7 @@ return {
       init = function()
         require("lazyvim.util").lsp.on_attach(function(_, buffer)
           -- stylua: ignore
-          vim.keymap.set( "n", "<leader>co", "TypescriptOrganizeImports", { buffer = buffer, desc = "Organize Imports" })
+          vim.keymap.set("n", "<leader>co", "TypescriptOrganizeImports", { buffer = buffer, desc = "Organize Imports" })
           vim.keymap.set("n", "<leader>cR", "TypescriptRenameFile", { desc = "Rename File", buffer = buffer })
         end)
       end,
@@ -197,13 +197,13 @@ return {
   },
 
   -- toggle terminal
-  { "akinsho/toggleterm.nvim"},
+  { "akinsho/toggleterm.nvim" },
 
   -- transparent
   "xiyaowong/transparent.nvim",
 
   -- typst
-  { 'kaarmu/typst.vim', ft = { 'typst' } },
+  { 'kaarmu/typst.vim',       ft = { 'typst' } },
 
   -- harpoon
   'ThePrimeagen/harpoon',
@@ -217,13 +217,19 @@ return {
   -- bar
   'nvim-tree/nvim-web-devicons',
   { 'romgrk/barbar.nvim', requires = 'nvim-web-devicons' },
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function() vim.fn["mkdp#util#install"]() end,
+  },
 
   -- colorschemes
-  { 'rose-pine/neovim', as = 'rose-pine' },
+  { 'rose-pine/neovim',   as = 'rose-pine' },
   "savq/melange-nvim",
   "sainnhe/everforest",
   'folke/tokyonight.nvim',
-  { "catppuccin/nvim", as = "catppuccin" },
+  { "catppuccin/nvim",        as = "catppuccin" },
   "AhmedAbdulrahman/aylin.vim",
   { 'talha-akram/noctis.nvim' },
   {
