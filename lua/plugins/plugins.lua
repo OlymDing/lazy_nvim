@@ -45,7 +45,9 @@ return {
       -- stylua: ignore
       {
         "<leader>ff",
-        function() require("telescope.builtin").find_files() end,
+        function()
+          require("telescope.builtin").find_files()
+        end,
         desc = "Find File",
       },
       {
@@ -222,6 +224,11 @@ return {
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     ft = { "markdown" },
     build = function() vim.fn["mkdp#util#install"]() end,
+  },
+
+  {
+    "sourcegraph/sg.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
   },
 
   -- colorschemes

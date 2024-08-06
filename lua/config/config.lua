@@ -2,7 +2,7 @@
 if vim.fn.exists("g:neovide") == 1 then
   print("hello neovide")
   vim.api.nvim_set_var("neovide_refresh_rate", 75)
-  vim.o.guifont = "CaskaydiaMono Nerd Font:h30"
+  vim.o.guifont = "CaskaydiaCove Nerd Font:h30"
 
   -- zoom
   vim.keymap.set("", "<C-=>",
@@ -29,8 +29,25 @@ if vim.fn.exists("g:neovide") == 1 then
     { noremap = true }
   )
 
-  -- set font 
-  vim.o.guifont = 'Agave Nerd Font Mono:h24'
   -- set F11 full screen
   vim.api.nvim_set_keymap('n', '<F11>', ":let g:neovide_fullscreen = !g:neovide_fullscreen<CR>", {})
 end
+
+require("telescope").setup({
+  defaults = {
+    mappings = {
+      i = {
+        ["<C-j>"] = require('telescope.actions').cycle_history_next,
+        ["<C-k>"] = require('telescope.actions').cycle_history_prev,
+      },
+    },
+  },
+})
+
+require('sg').setup()
+
+require('lspconfig').rust_analyzer.setup({
+  on_attach = function(client, bufnr)
+      vim.lsp.inlay_hint.enable(false, { bufnr = bufnr })
+  end
+})
