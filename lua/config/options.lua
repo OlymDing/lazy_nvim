@@ -36,3 +36,5 @@ vim.opt.updatetime = 50
 vim.opt.cursorline = true
 vim.opt.cursorcolumn = true
 vim.opt.ignorecase = true
+
+vim.opt.hlsearch = true
