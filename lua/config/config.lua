@@ -2,7 +2,7 @@
 if vim.fn.exists("g:neovide") == 1 then
   print("hello neovide")
   vim.api.nvim_set_var("neovide_refresh_rate", 75)
-  vim.o.guifont = "CaskaydiaCove Nerd Font:h30"
+  vim.o.guifont = "RecMonoCasual Nerd Font Mono:h30"
 
   -- zoom
   vim.keymap.set("", "<C-=>",
@@ -44,10 +44,20 @@ require("telescope").setup({
   },
 })
 
-require('sg').setup()
+-- require('sg').setup()
 
 require('lspconfig').rust_analyzer.setup({
   on_attach = function(client, bufnr)
-      vim.lsp.inlay_hint.enable(false, { bufnr = bufnr })
+    vim.lsp.inlay_hint.enable(false, { bufnr = bufnr })
   end
+})
+
+require('lspconfig').clangd.setup({
+  on_attach = function(client, bufnr)
+    vim.lsp.inlay_hint.enable(false, { bufnr = bufnr })
+  end
+})
+
+require('lspconfig').pyright.setup({
+  cmd = { "pyright-langserver", "--stdio" }
 })
