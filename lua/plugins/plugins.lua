@@ -16,7 +16,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "rose-pine",
+      colorscheme = "newpaper",
     },
   },
 
@@ -212,6 +212,14 @@ return {
     build = function() vim.fn["mkdp#util#install"]() end,
   },
 
+  {
+    "folke/noice.nvim",
+    opts = function(_, opts)
+      opts.lsp.signature = {
+        opts = { size = { max_height = 5, max_width = 50 } },
+      }
+    end,
+  },
   -- {
     -- "sourcegraph/sg.nvim",
     -- dependencies = { "nvim-lua/plenary.nvim" },
