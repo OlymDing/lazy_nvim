@@ -6,5 +6,4 @@ return {
     enabled = false,
   },
   { "echasnovski/mini.pairs", enabled = false },
-  { "rcarriga/nvim-notify", enable = false},
 }

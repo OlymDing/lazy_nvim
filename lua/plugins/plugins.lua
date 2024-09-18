@@ -16,7 +16,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "newpaper",
+      colorscheme = "terafox",
     },
   },
 
@@ -216,7 +216,7 @@ return {
     "folke/noice.nvim",
     opts = function(_, opts)
       opts.lsp.signature = {
-        opts = { size = { max_height = 5, max_width = 50 } },
+        opts = { size = { max_height = 3} },
       }
     end,
   },
@@ -226,6 +226,7 @@ return {
   -- },
 
   -- colorschemes
+  { "EdenEast/nightfox.nvim" },
   { 'rose-pine/neovim',   as = 'rose-pine' },
   "savq/melange-nvim",
   "sainnhe/everforest",
