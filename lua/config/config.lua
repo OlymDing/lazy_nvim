@@ -61,3 +61,23 @@ require('lspconfig').clangd.setup({
 require('lspconfig').pyright.setup({
   cmd = { "pyright-langserver", "--stdio" }
 })
+
+-- move popup to bottom-right corner
+require("noice").setup({
+  views = {
+    popup = {
+      position = {
+        row = "0%", -- Adjust this to position vertically
+        col = "0%", -- Align to the left
+      },
+      size = {
+        width = "50%",   -- Adjust width as needed
+        height = "auto", -- Adjust height as needed
+      },
+    },
+  },
+})
+
+require("notify").setup({
+  top_down = false,
+})
