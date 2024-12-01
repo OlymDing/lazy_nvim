@@ -54,7 +54,6 @@ vim.keymap.del("n", "f")
 vim.keymap.del("n", "s")
 vim.keymap.del("n", "<leader>wm")
 vim.keymap.del("n", "<leader>wd")
-vim.keymap.del("t", "<C-l>")
 
 -- cmp
 local cmp = require("cmp")

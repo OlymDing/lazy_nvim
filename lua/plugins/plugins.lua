@@ -204,7 +204,7 @@ return {
 
   -- bar
   'nvim-tree/nvim-web-devicons',
-  { 'romgrk/barbar.nvim', requires = 'nvim-web-devicons' },
+  { 'romgrk/barbar.nvim',    requires = 'nvim-web-devicons' },
   {
     "iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
@@ -213,21 +213,25 @@ return {
   },
 
   {
+    "snacks.nvim",
+    opts = { notifier = { enabled = false } }
+  },
+  {
     "folke/noice.nvim",
     opts = function(_, opts)
       opts.lsp.signature = {
-        opts = { size = { max_height = 3} },
+        opts = { size = { max_height = 3 } },
       }
     end,
+    dependencies = {
+      "rcarriga/nvim-notify",
+    }
   },
-  -- {
-    -- "sourcegraph/sg.nvim",
-    -- dependencies = { "nvim-lua/plenary.nvim" },
-  -- },
+  'rcarriga/nvim-notify',
 
   -- colorschemes
   { "EdenEast/nightfox.nvim" },
-  { 'rose-pine/neovim',   as = 'rose-pine' },
+  { 'rose-pine/neovim',      as = 'rose-pine' },
   "savq/melange-nvim",
   "sainnhe/everforest",
   'folke/tokyonight.nvim',
