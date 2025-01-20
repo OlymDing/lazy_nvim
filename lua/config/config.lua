@@ -70,4 +70,3 @@ vim.notify.setup({
   stages = "slide",
   timeout = 500
 })
-

@@ -16,8 +16,10 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "terafox",
+      -- colorscheme = "terafox",
+      colorscheme = "newpaper",
     },
+    version = "v13.9.1"
   },
 
   -- change trouble config
