@@ -230,13 +230,22 @@ return {
     }
   },
   'rcarriga/nvim-notify',
-
+  'nvim-lua/plenary.nvim',
+  {
+    'nvim-flutter/flutter-tools.nvim',
+    lazy = false,
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'stevearc/dressing.nvim',   -- optional for vim.ui.select
+    },
+    config = true,
+  },
   -- colorschemes
   { "EdenEast/nightfox.nvim" },
   { 'rose-pine/neovim',      as = 'rose-pine' },
   "savq/melange-nvim",
   "sainnhe/everforest",
-  'folke/tokyonight.nvim',
+  -- 'folke/tokyonight.nvim',
   { "catppuccin/nvim",        as = "catppuccin" },
   "AhmedAbdulrahman/aylin.vim",
   { 'talha-akram/noctis.nvim' },
