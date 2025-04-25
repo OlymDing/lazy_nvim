@@ -38,3 +38,6 @@ vim.opt.cursorcolumn = true
 vim.opt.ignorecase = true
 
 vim.opt.hlsearch = true
+
+-- disable auto adding fixend
+vim.opt.fixendofline = false
