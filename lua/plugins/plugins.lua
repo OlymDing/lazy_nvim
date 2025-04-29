@@ -16,8 +16,8 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      -- colorscheme = "terafox",
-      colorscheme = "newpaper",
+      colorscheme = "terafox",
+      -- colorscheme = "newpaper",
     },
     version = "v13.9.1"
   },
@@ -147,24 +147,10 @@ return {
     end,
   },
 
-  -- the opts function can also be used to change the default opts:
-  {
-    "nvim-lualine/lualine.nvim",
-    event = "VeryLazy",
-    opts = function(_, opts)
-      table.insert(opts.sections.lualine_x, "😄")
-    end,
-  },
-
   -- or you can return new options to override all the defaults
   {
-    "nvim-lualine/lualine.nvim",
-    event = "VeryLazy",
-    opts = function()
-      return {
-        --[[add your custom lualine config here]]
-      }
-    end,
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' }
   },
 
   -- use mini.starter instead of alpha
@@ -236,7 +222,7 @@ return {
     lazy = false,
     dependencies = {
       'nvim-lua/plenary.nvim',
-      'stevearc/dressing.nvim',   -- optional for vim.ui.select
+      'stevearc/dressing.nvim', -- optional for vim.ui.select
     },
     config = true,
   },
@@ -262,5 +248,6 @@ return {
   },
   { "xero/miasma.nvim" },
   { "Biscuit-Colorscheme/nvim" },
-  "yorik1984/newpaper.nvim"
+  "yorik1984/newpaper.nvim",
+  { 'dasupradyumna/midnight.nvim', lazy = false, priority = 1000 }
 }

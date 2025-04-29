@@ -1,36 +1,21 @@
 -- neovide
 if vim.fn.exists("g:neovide") == 1 then
   print("hello neovide")
-  vim.api.nvim_set_var("neovide_refresh_rate", 75)
-  vim.o.guifont = "RecMonoCasual Nerd Font Mono:h20"
-
-  -- zoom
-  vim.keymap.set("", "<C-=>",
-    function()
-      -- find & get current font size
-      local _, _, font_size = vim.o.guifont:find(".*:h(%d+)$")
-      font_size = tostring(tonumber(font_size) + 1)
-      -- update the font size
-      vim.o.guifont = string.gsub(vim.o.guifont, "%d+$", font_size)
-    end,
-    { noremap = true }
-  )
-  -- dezoom
-  vim.keymap.set("", "<C-->",
-    function()
-      -- find & get current font size
-      local _, _, font_size = vim.o.guifont:find(".*:h(%d+)$")
-      if tonumber(font_size) > 1 then
-        font_size = tostring(tonumber(font_size) - 1)
-        -- update the font size
-        vim.o.guifont = string.gsub(vim.o.guifont, "%d+$", font_size)
-      end
-    end,
-    { noremap = true }
-  )
+  -- vim.api.nvim_set_var("neovide_refresh_rate", 75)
+  vim.o.guifont = "CaskaydiaCove Nerd Font:h20"
 
   -- set F11 full screen
   vim.api.nvim_set_keymap('n', '<F11>', ":let g:neovide_fullscreen = !g:neovide_fullscreen<CR>", {})
+  vim.keymap.set('', '<C-S-v>', '"+p', { noremap = true, silent = true })
+  vim.keymap.set('i', '<C-S-v>', '<C-r>+', { noremap = true, silent = true })
+
+  vim.keymap.set({ "n", "v" }, "<C-=>",
+    function()
+      vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1
+    end)
+  vim.keymap.set({ "n", "v" }, "<C-->", function ()
+      vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1
+  end)
 end
 
 require("telescope").setup({
