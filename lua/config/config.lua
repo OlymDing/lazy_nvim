@@ -7,6 +7,7 @@ if vim.fn.exists("g:neovide") == 1 then
   -- set F11 full screen
   vim.api.nvim_set_keymap('n', '<F11>', ":let g:neovide_fullscreen = !g:neovide_fullscreen<CR>", {})
   vim.keymap.set('', '<C-S-v>', '"+p', { noremap = true, silent = true })
+  vim.keymap.set('n', '<C-S-v>', '"+p', { noremap = true, silent = true })
   vim.keymap.set('i', '<C-S-v>', '<C-r>+', { noremap = true, silent = true })
 
   vim.keymap.set({ "n", "v" }, "<C-=>",
