@@ -10,12 +10,12 @@ if vim.fn.exists("g:neovide") == 1 then
   vim.keymap.set('n', '<C-S-v>', '"+p', { noremap = true, silent = true })
   vim.keymap.set('i', '<C-S-v>', '<C-r>+', { noremap = true, silent = true })
 
-  vim.keymap.set({ "n", "v" }, "<C-=>",
+  vim.keymap.set({ "n", "v", "i" }, "<C-=>",
     function()
       vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1
     end)
-  vim.keymap.set({ "n", "v" }, "<C-->", function ()
-      vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1
+  vim.keymap.set({ "n", "v", "i" }, "<C-->", function()
+    vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1
   end)
 end
 
@@ -52,7 +52,7 @@ vim.notify = require("notify")
 
 vim.notify.setup({
   top_down = false,
-  fps = 75,
+  fps = 165,
   stages = "slide",
   timeout = 500
 })
