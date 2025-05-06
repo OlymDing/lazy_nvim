@@ -9,6 +9,7 @@ if vim.fn.exists("g:neovide") == 1 then
   vim.keymap.set('', '<C-S-v>', '"+p', { noremap = true, silent = true })
   vim.keymap.set('n', '<C-S-v>', '"+p', { noremap = true, silent = true })
   vim.keymap.set('i', '<C-S-v>', '<C-r>+', { noremap = true, silent = true })
+  vim.keymap.set('c', '<C-S-v>', '<C-r>+', { noremap = true })
 
   vim.keymap.set({ "n", "v", "i" }, "<C-=>",
     function()
